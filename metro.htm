@@ -1,0 +1,83 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Metro Template</title>
+	<link rel="stylesheet" href="css/metro.css">
+	<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
+	<script src="js/metro.js" type="text/javascript"></script>
+	<style>
+	.doc{
+		color:white;
+		padding: 10px;
+	}
+	</style>
+</head>
+<body>
+	<div class="doc">
+		<h1>Width Caculating</h1>
+		<p>For each metroBlock, the actual width= width + padding-left + padding-right</p>
+		<p>For each metroBlock-2, the width = block1.width + block2.width + block1.padding-right + block2.padding-left + block1.margin-right</p>
+		<p>The actual width of metroBlock-2 is caculated in same way of metroBlock</p>
+	</div>
+	<div class="metro">
+		<div class="metroRow">
+			<div class="metroBlock">
+				Metro Block
+			</div>
+			<div class="metroBlock">
+				Metro Block
+			</div>
+			<div class="metroBlock">
+				Metro Block
+			</div>
+			<div class="metroBlock">
+				Metro Block
+			</div>
+			<div class="metroBlock">
+				Metro Block
+			</div>
+			<div class="metroBlock">
+				Metro Block
+			</div>
+		</div>
+		<div class="metroRow">
+			<div class="metroBlock">
+				Metro Block
+			</div>
+			<div class="metroBlock metroBlock-2">
+				Metro Block Large
+			</div>
+			<div class="metroBlock">
+				Metro Block
+			</div>
+			<div class="metroBlock metroBlock-2">
+				Metro Block
+			</div>
+		</div>
+		<div class="metroRow">
+			<div class="metroBlock">
+				Metro Block
+			</div>
+			<div class="metroBlock metroBlock-3">
+				Metro Block Large
+			</div>
+			<div class="metroBlock metroBlock-2">
+				Metro Block
+			</div>	
+		</div>
+		<div class="metroRow">
+			<div class="metroBlock">
+				Metro Block
+			</div>
+			<div class="metroBlock">
+				Metro Block Large
+			</div>
+			<div class="metroBlock metroBlock-4">
+				Metro Block
+			</div>
+			
+		</div>
+	</div>
+</body>
+</html>
