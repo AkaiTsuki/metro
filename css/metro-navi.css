@@ -1,0 +1,26 @@
+ul.metroNavi{
+	list-style: none;
+	margin: 0;
+	padding: 0;
+	height: 80px;
+	background-color: #222;
+}
+
+ul.metroNavi li{
+	float: left;
+}
+
+ul.metroNavi li a{
+	color:#fff;
+	display: block;
+	height: 60px;
+	padding: 10px;
+	line-height: 60px;
+	text-decoration: none;
+	text-shadow:1px 1px 4px #fff;
+}
+
+ul.metroNavi li a:hover{
+	background-color: orange;
+	text-shadow:1px 1px 7px #000;
+}
