@@ -25,32 +25,25 @@ Metro.setUpParameters=function(){
 * 5. sum of left and right padding for each block other than the first and last
 */
 Metro.caculateBlockWidth = function(columns){
-	var middleBlocks = columns - 2;
-	if (middleBlocks < 0) { middleBlocks = 0};
-	var marginNumber = columns - 1;
-
-	var marginWidth = Metro.rightMargin * marginNumber;
-	var width = columns * Metro.blockWidth
-				+ marginWidth
-				+ Metro.rightPadding
-				+ Metro.leftPadding
-				+ middleBlocks * (Metro.rightPadding + Metro.leftPadding);
-	return width;
+	return Metro.caculateBlockDimension(columns,Metro.blockWidth,Metro.rightPadding,Metro.leftPadding,Metro.rightMargin);
 }
 
 Metro.caculateBlockHeight = function(rows){
-	var middleBlocks = rows - 2;
-	if (middleBlocks < 0) { middleBlocks = 0};
-	var marginNumber = rows - 1;
+	return Metro.caculateBlockDimension(rows,Metro.blockHeight,Metro.bottomPadding,Metro.topPadding,Metro.bottomMargin);
+}
 
-	var marginHeight = Metro.bottomMargin * marginNumber;
-	var height = rows * Metro.blockHeight
-				+ marginHeight
-				+ Metro.topPadding
-				+ Metro.bottomPadding
-				+ middleBlocks * (Metro.topPadding + Metro.bottomPadding);
-				
-	return height;
+Metro.caculateBlockDimension = function(blocks, basic,firstPadding,lastPadding,margin){
+	var middleBlocks = blocks - 2;
+	if (middleBlocks < 0) { middleBlocks = 0};
+	var marginNumber = blocks - 1;
+
+	var marginWidth = margin * marginNumber;
+	var result = blocks * basic
+				+ marginWidth
+				+ firstPadding
+				+ lastPadding
+				+ middleBlocks * (firstPadding + lastPadding);
+	return result;
 }
 
 Metro.layout=function(){
@@ -93,7 +86,7 @@ Metro.run=function(){
 	Metro.setUpParameters();
 	Metro.layout();
 	Metro.addColor();
-	Metro.wrapByHyperLink();
+	//Metro.wrapByHyperLink();
 	Metro.addClearDiv();
 }
 
