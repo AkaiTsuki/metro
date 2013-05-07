@@ -5,11 +5,17 @@ Metro.setUpParameters=function(){
 	Metro.rightPadding=parseFloat($('.metroBlock').css('paddingRight'),10);
 	Metro.leftPadding=parseFloat($('.metroBlock').css('paddingLeft'),10);
 	Metro.rightMargin=parseFloat($('.metroBlock').css('marginRight'),10);
+
+	Metro.blockHeight=$('.metroBlock').height();
+	Metro.topPadding=parseFloat($('.metroBlock').css('paddingTop'),10);
+	Metro.bottomPadding=parseFloat($('.metroBlock').css('paddingBottom'),10);
+	Metro.bottomMargin=parseFloat($('.metroBlock').css('marginBottom'),10);
+
 	Metro.colors=["metroGreen","metroBlue","metroOrange","metroDarkCyan","metroRed","metroPurple"];
 }
 
 /*
-* blcokNumber: number of blocks that a metro will take
+* columns: number of columns that a metro will take
 * caculates the width of the block and returns the result.
 * Algorithm: the width of the metro block is the sum of the following:
 * 1. sum of the width of all blocks it takes
@@ -18,13 +24,13 @@ Metro.setUpParameters=function(){
 * 4. all margins within the blocks
 * 5. sum of left and right padding for each block other than the first and last
 */
-Metro.caculateBlockWidth = function(blockNumber){
-	var middleBlocks = blockNumber - 2;
+Metro.caculateBlockWidth = function(columns){
+	var middleBlocks = columns - 2;
 	if (middleBlocks < 0) { middleBlocks = 0};
-	var marginNumber = blockNumber - 1;
+	var marginNumber = columns - 1;
 
 	var marginWidth = Metro.rightMargin * marginNumber;
-	var width = blockNumber * Metro.blockWidth
+	var width = columns * Metro.blockWidth
 				+ marginWidth
 				+ Metro.rightPadding
 				+ Metro.leftPadding
@@ -32,13 +38,42 @@ Metro.caculateBlockWidth = function(blockNumber){
 	return width;
 }
 
+Metro.caculateBlockHeight = function(rows){
+	var middleBlocks = rows - 2;
+	if (middleBlocks < 0) { middleBlocks = 0};
+	var marginNumber = rows - 1;
+
+	var marginHeight = Metro.bottomMargin * marginNumber;
+	var height = rows * Metro.blockHeight
+				+ marginHeight
+				+ Metro.topPadding
+				+ Metro.bottomPadding
+				+ middleBlocks * (Metro.topPadding + Metro.bottomPadding);
+				
+	return height;
+}
+
 Metro.layout=function(){
 	var doubleBlockWidth=Metro.caculateBlockWidth(2);
 	var tripleBlockWidth=Metro.caculateBlockWidth(3);
 	var quadBlockWidth=Metro.caculateBlockWidth(4);
-	$('.metroBlock-2').css('width',doubleBlockWidth);
-	$('.metroBlock-3').css('width',tripleBlockWidth);
-	$('.metroBlock-4').css('width',quadBlockWidth);
+
+	var doubleBlockHeight= Metro.caculateBlockHeight(2);
+	var tripleBlockHeight= Metro.caculateBlockHeight(3);
+
+	$('.col-2').css('width',doubleBlockWidth);
+	$('.col-3').css('width',tripleBlockWidth);
+	$('.col-4').css('width',quadBlockWidth);
+
+	$('.row-2').css('height',doubleBlockHeight);
+	$('.row-3').css('height',tripleBlockHeight);
+}
+
+Metro.addClearDiv=function(){
+	$('.metro').each(function(){
+		var clearDiv=$("<div>").addClass('clear');
+		$(this).append(clearDiv);
+	});
 }
 
 Metro.addColor=function(){
@@ -59,6 +94,7 @@ Metro.run=function(){
 	Metro.layout();
 	Metro.addColor();
 	Metro.wrapByHyperLink();
+	Metro.addClearDiv();
 }
 
 $(Metro.run);
