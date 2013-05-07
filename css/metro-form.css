@@ -1,0 +1,8 @@
+input[type=text]{
+	height:20px;
+	width: 200px;
+	padding:5px 0 5px 7px;
+	border: 1px solid #444;
+	font: 16px/22px arial;
+	outline: 0;
+}

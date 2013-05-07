@@ -1,9 +1,23 @@
+header{
+	height: 80px;
+	background-color: #222;
+}
+
+.logo{
+	float: left;
+}
+
+.logo img{
+	max-height: 95%;
+	position: relative;
+	top: 3px;
+	margin-right: 10px;
+}
+
 ul.metroNavi{
 	list-style: none;
 	margin: 0;
 	padding: 0;
-	height: 80px;
-	background-color: #222;
 }
 
 ul.metroNavi li{
@@ -24,3 +38,17 @@ ul.metroNavi li a:hover{
 	background-color: orange;
 	text-shadow:1px 1px 7px #000;
 }
+
+.search{
+	line-height: 80px;
+	float: right;
+	margin-right:10px;
+}
+
+.search img{
+	max-height:100%;
+}
+
+.search button{
+	position: relative;
+	top:4px;
