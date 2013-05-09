@@ -1,0 +1,41 @@
+ul.metroDropdownNavi,ul.metroDropdownNavi ul{
+	margin: 0;
+	padding: 0;
+	list-style: none;
+}
+
+ul.metroDropdownNavi li{
+	float: left;
+	position: relative;
+	width: 150px;
+	border-right: 1px solid #eee;
+}
+
+ul.metroDropdownNavi li a{
+	text-decoration: none;
+	color: #eee;
+	display: block;
+	height: 20px;
+	padding: 5px 0 5px 10px;
+	background-color: #333;
+}
+
+ul.metroDropdownNavi li a:hover{
+	background-color: orange;
+	text-shadow: 1px 1px 5px #000;
+}
+
+ul.metroDropdownNavi ul{
+	position: absolute;
+	left: 0;	
+	border-bottom: 5px solid orange;
+	display: none;
+}
+
+ul.metroDropdownNavi ul li a{
+	border-bottom: 1px dashed #eee;
+}
+
+.clear{
+	clear: both;
+}
