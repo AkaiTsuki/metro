@@ -1,0 +1,32 @@
+ul.metroMenu{
+	background-color: #333;
+	margin: 0;
+	padding: 0;
+	list-style: none;
+	display: inline-block;
+	width: 200px;
+}
+
+ul.metroMenu li{
+	border-bottom: 1px solid #ccc;
+}
+
+ul.metroMenu li a{
+	color: white;
+	text-decoration: none;
+	font: 16px/30px Arial;
+	display: block;
+	height:30px;
+	padding: 5px 0 5px 10px;
+}
+
+ul.metroMenu li a:hover{
+	text-shadow: 1px 1px 5px #000;
+	background-color: orange;
+}
+
+ul.metroMenu li a img{
+	height: 16px;
+	line-height: 30px;
+	margin-right: 10px;
+}
