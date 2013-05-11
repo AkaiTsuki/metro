@@ -5,6 +5,7 @@
 	padding: 0;
 	overflow: hidden;
 	position: relative;
+	font-family: Arial;
 }
 
 .sliderContent{
@@ -22,7 +23,7 @@
 }
 
 .active{
-	color: red !important;
+	color: #58A6D9 !important;
 }
 
 .paging{
@@ -49,9 +50,5 @@
 	list-style: none;
 	margin: 0;
 	padding: 0;
-}
-
-.slider .paging ul li{
-
 }
 
