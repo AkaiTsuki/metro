@@ -1,4 +1,4 @@
-.slider{
+.metroSlider{
 	width: 900px;
 	height: 300px;
 	margin: 0;
@@ -32,7 +32,7 @@
 	right:10px;
 }
 
-.slider .paging a, .slider .paging ul li{
+.metroSlider .paging a, .metroSlider .paging ul li{
 	color: white;
 	background-color: #333;
 	padding: 5px;
@@ -42,11 +42,11 @@
 	cursor: pointer;
 }
 
-.slider .paging a, .slider .paging ul li, .slider .paging ul{
+.metroSlider .paging a, .metroSlider .paging ul li, .metroSlider .paging ul{
 	float: left;
 }
 
-.slider .paging ul{
+.metroSlider .paging ul{
 	list-style: none;
 	margin: 0;
 	padding: 0;
