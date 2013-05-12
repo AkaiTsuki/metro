@@ -179,7 +179,7 @@ MetroSlider.initial=function() {
 	MetroSlider.addPagination();
 	MetroSlider.bindNextEvent();
 	MetroSlider.bindPreviouEvent();
-	//MetroSlider.bindPaging();
+	MetroSlider.bindPaging();
 	MetroSlider.autoSwitch();
 }
 
